@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Comparação de Financiamento e Consórcio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Comparação de Financiamento e Consórcio</h1>
+    
+    <form id="calculatorForm">
+      <h2>Financiamento Residencial</h2>
+      <label for="financingTotal">Valor Total:</label>
+      <input type="number" id="financingTotal" required><br>
+      
+      <label for="financingInstallments">Quantidade de Parcelas:</label>
+      <input type="number" id="financingInstallments" required><br>
+      
+      <label for="financingInterestRate">Taxa de Juros (% a.a.):</label>
+      <input type="number" id="financingInterestRate" required><br>
+      
+      <h2>Consórcio</h2>
+      <label for="consortiumTotal">Valor Total:</label>
+      <input type="number" id="consortiumTotal" required><br>
+      
+      <label for="consortiumInstallments">Quantidade de Parcelas:</label>
+      <input type="number" id="consortiumInstallments" required><br>
+      
+      <label for="consortiumInterestRate">Taxa Administrativa (%):</label>
+      <input type="number" id="consortiumInterestRate" required><br>
+      
+      <button type="button" onclick="validateFields()">Calcular</button>
+      <button onclick="clearFields()">Limpar</button>
+    </form>
+
+    <div id="results">
+      <!-- Aqui serão exibidos os resultados -->
+    </div>
+    <div id="comparison">
+      <h2>Comparação de Vantagens</h2>
+      <p id="comparisonResult"></p>
+    </div>
+  </div>
+  <script src="scripts.js"></script>
+</body>
+</html>
