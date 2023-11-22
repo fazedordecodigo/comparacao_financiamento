@@ -26,20 +26,31 @@ function calculate() {
 
     // Exibir resultados na tela
     const resultsDiv = document.getElementById('results');
+    const comparisonDiv = document.getElementById('comparison');
+
     resultsDiv.innerHTML = `
       <h2>Resultados</h2>
+      <div class="results-container">
+      <div class="result">
       <h3>Financiamento Residencial</h3>
       <p>Total de Juros Pago: R$ ${totalFinancingInterest.toLocaleString('pt-BR', formattingOptions)}</p>
       <p>Valor Total Pago: R$ ${financingTotalPayment.toLocaleString('pt-BR', formattingOptions)}</p>
       <p>Valor por Parcela: R$ ${financingMonthlyPayment.toLocaleString('pt-BR', formattingOptions)}</p>
+      </div>
+      <div class="result">
       <h3>Consórcio</h3>
       <p>Total de Juros Pago: R$ ${totalConsortiumInterest.toLocaleString('pt-BR', formattingOptions)}</p>
       <p>Valor Total Pago: R$ ${consortiumTotalPayment.toLocaleString('pt-BR', formattingOptions)}</p>
       <p>Valor por Parcela: R$ ${consortiumMonthlyPayment.toLocaleString('pt-BR', formattingOptions)}</p>
+      </div>
+      </div>
     `;
 
+    // Mostrar divs de comparação e resultados
+    resultsDiv.style.display = 'block';
+    comparisonDiv.style.display = 'block';
+
     // Comparar e exibir qual é mais vantajoso
-    const comparisonDiv = document.getElementById('comparisonResult');
     if (financingTotalPayment < consortiumTotalPayment) {
       comparisonDiv.innerHTML = `O Financiamento Residencial é mais vantajoso.`;
       comparisonDiv.classList.add('highlight');
@@ -58,13 +69,13 @@ function calculate() {
     input.value = '';
   });
 
-  // Limpar os resultados
   const resultsDiv = document.getElementById('results');
+  const comparisonDiv = document.getElementById('comparison');
+  
   resultsDiv.innerHTML = '';
-
-  // Limpar a seção de comparação
-  const comparisonDiv = document.getElementById('comparisonResult');
+  resultsDiv.style.display = 'none';
   comparisonDiv.innerHTML = '';
+  comparisonDiv.style.display = 'none';
 }
 function validateFields() {
     const inputs = document.querySelectorAll('input[type="number"]');

@@ -20,6 +20,7 @@ body {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
+
   form {
     background-color: #fff;
     padding: 20px;
@@ -35,10 +36,12 @@ body {
 
   input[type="number"] {
     width: 100%;
-    padding: 8px;
+    padding: 7px;
     margin-bottom: 10px;
-    border-radius: 4px;
+    border-radius: 8px;
     border: 1px solid #ccc;
+    width: calc(80% - 20px);
+    box-sizing: border-box;
   }
 
   button {
@@ -80,10 +83,14 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background-color: #E6E6FA;
   }
-
+  
   #comparison h2 {
     color: #333;
     margin-top: 0;
+  }
+  
+  h2 {
+    text-align: center
   }
 
   #comparison p {
@@ -112,3 +119,72 @@ body {
     padding: 10px 20px;
     border-radius: 4px;
   }
+
+  .results-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+  }
+  
+  .result {
+    flex: 1;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .result h3 {
+    margin-top: 0;
+    color: #333;
+  }
+
+  #comparison,
+  #results {
+    display: none;
+  }
+
+  .form-columns {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+  }
+  
+  .form-column {
+    flex: 1;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 0 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .form-column .input-field {
+    width: 50%;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-top: 30px;
+  }
+  
+  .button-container button {
+    margin: 0 15px;
+    transition: transform 0.2s;
+  }
+
+  .clear-button {
+    background-color: #ffcc00;
+    color: #fff;
+  }
+  
+  .clear-button:hover {
+    background-color: #e6b800;
+  }
+
+  .button-container button:active {
+    transform: scale(0.95);
