@@ -29,19 +29,18 @@ function calculate() {
     const comparisonDiv = document.getElementById('comparison');
 
     resultsDiv.innerHTML = `
-      <h2>Resultados</h2>
       <div class="results-container">
       <div class="result">
-      <h3>Financiamento Residencial</h3>
+      <h3>Financiamento</h3>
       <p>Total de Juros Pago: R$ ${totalFinancingInterest.toLocaleString('pt-BR', formattingOptions)}</p>
-      <p>Valor Total Pago: R$ ${financingTotalPayment.toLocaleString('pt-BR', formattingOptions)}</p>
-      <p>Valor por Parcela: R$ ${financingMonthlyPayment.toLocaleString('pt-BR', formattingOptions)}</p>
+      <p>Total Pago: R$ ${financingTotalPayment.toLocaleString('pt-BR', formattingOptions)}</p>
+      <p>Parcela: R$ ${financingMonthlyPayment.toLocaleString('pt-BR', formattingOptions)}</p>
       </div>
       <div class="result">
       <h3>Consórcio</h3>
       <p>Total de Juros Pago: R$ ${totalConsortiumInterest.toLocaleString('pt-BR', formattingOptions)}</p>
-      <p>Valor Total Pago: R$ ${consortiumTotalPayment.toLocaleString('pt-BR', formattingOptions)}</p>
-      <p>Valor por Parcela: R$ ${consortiumMonthlyPayment.toLocaleString('pt-BR', formattingOptions)}</p>
+      <p>Total Pago: R$ ${consortiumTotalPayment.toLocaleString('pt-BR', formattingOptions)}</p>
+      <p>Parcela: R$ ${consortiumMonthlyPayment.toLocaleString('pt-BR', formattingOptions)}</p>
       </div>
       </div>
     `;
@@ -92,7 +91,7 @@ function validateFields() {
     });
   
     if (isValid) {
-      calculate();
+      openModal()
     }
   }
   
@@ -112,3 +111,13 @@ function validateFields() {
     event.preventDefault();
     validateFields();
   });
+
+  function openModal() {
+    var modal = document.getElementById("myModal");
+    modal.style.display = "block";
+    calculate();
+  }
+  function closeModal() {
+    var modal = document.getElementById("myModal");
+    modal.style.display = "none";
+  }
